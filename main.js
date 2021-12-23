@@ -56,6 +56,7 @@ function checkForWinState(face) {
 		win = isWinCondition(cond, faces[i]);
 		if (!win) break;
 	}
+	if (win) return cond === "X" ? endCross : endCircle;
 
 	//Check for column
 	win = true;
