@@ -60,3 +60,20 @@ header {
 .cross {
 	color: $primary-accent-color;
 }
+
+//RESULT DISPLAY
+#result-container {
+	display: none;
+	width: fit-content;
+	margin: 1em auto;
+	background-color: $tertiary-color;
+	border-radius: 0.3em;
+}
+#result {
+	text-align: center;
+	padding: 0.2em 1em;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.7em;
+	color: darken($primary-color, 10%);
+}

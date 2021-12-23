@@ -16,12 +16,12 @@ let gameState = playing;
 for (let i = 0; i < 9; i++) {
 	faces.push(document.getElementById(`${i}`));
 	faces[i].onclick = () => {
-		clickFace(faces[i]);
+		onFaceClick(faces[i]);
 	};
 }
 
 //event for when the user clicks on the face
-function clickFace(face) {
+function onFaceClick(face) {
 	if (gameState !== playing) return;
 
 	if (isEmptyFace(face)) {
@@ -30,7 +30,7 @@ function clickFace(face) {
 		gameState = checkForWinState(face);
 
 		if (gameState === playing) switchPlayer();
-		else console.log(`${player} WINS!`);
+		else displayResult();
 	}
 }
 
@@ -90,4 +90,23 @@ function checkForWinState(face) {
 
 function isWinCondition(condition, check) {
 	return condition === check.innerText;
+}
+
+//Show Result
+function displayResult() {
+	const result = document.getElementById("result-container");
+	const resultText = document.getElementById("result");
+	result.style.display = "block";
+
+	switch (gameState) {
+		case endDraw:
+			resultText.innerText = "DRAW";
+			break;
+		case endCross:
+		case endCircle:
+			resultText.innerText = `${player} WON`;
+			break;
+		default:
+			break;
+	}
 }
