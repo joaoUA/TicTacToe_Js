@@ -20,6 +20,7 @@ body {
 }
 
 header {
+	margin-bottom: 4em;
 	background-color: $primary-color;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 	text-align: center;
@@ -29,7 +30,6 @@ header {
 
 #board {
 	margin: 0 auto;
-	margin-top: 5em;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
@@ -76,4 +76,26 @@ header {
 	font-weight: 400;
 	font-size: 1.7em;
 	color: darken($primary-color, 10%);
+}
+
+//Game Options
+#game-options {
+	width: calc(128px * 3 + 00.2em * 2 + 4px); //board width
+	margin: 0 auto;
+}
+
+//RESET BUTTON
+#game-reset-btn {
+	width: 32px;
+	height: 32px;
+	margin: 0.5em 0;
+	background-color: $secondary-color;
+	border: none;
+	border-radius: 0.2em;
+	color: $primary-accent-color;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+	&:hover {
+		cursor: pointer;
+	}
 }

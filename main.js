@@ -1,5 +1,7 @@
 const board = document.getElementById("board");
 const faces = [];
+const result = document.getElementById("result-container");
+const resultText = document.getElementById("result");
 
 const cross = "X";
 const circle = "O";
@@ -95,8 +97,6 @@ function isWinCondition(condition, check) {
 
 //Show Result
 function displayResult() {
-	const result = document.getElementById("result-container");
-	const resultText = document.getElementById("result");
 	result.style.display = "block";
 
 	switch (gameState) {
@@ -110,4 +110,21 @@ function displayResult() {
 		default:
 			break;
 	}
+}
+
+//RESET
+const resetBtn = document.getElementById("game-reset-btn");
+resetBtn.onclick = () => {
+	resetGameState();
+};
+function resetGameState() {
+	plays = 0;
+	player = cross;
+	gameState = playing;
+
+	faces.forEach((face) => {
+		face.innerText = "";
+		face.classList = "face";
+	});
+	result.style.display = "none";
 }
