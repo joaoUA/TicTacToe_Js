@@ -1,0 +1,62 @@
+//Colors
+$primary-color: #1d3557;
+$secondary-color: #457b9d;
+$tertiary-color: #a8dadc;
+$primary-accent-color: #f1faee;
+$secondary-accent-color: #e63946;
+
+//Sizes
+$face-size: 128px;
+
+//General
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: darken($primary-color, 5%);
+}
+
+header {
+	background-color: $primary-color;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	text-align: center;
+	padding: 1em 0;
+	color: $primary-accent-color;
+}
+
+#board {
+	margin: 0 auto;
+	margin-top: 5em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 0.2em;
+	width: fit-content;
+	background-color: $primary-color;
+	border: $secondary-color solid 2px;
+}
+
+.face {
+	width: $face-size;
+	height: $face-size;
+	background-color: darken($primary-color, 5%);
+
+	font-family: cursive;
+	line-height: $face-size;
+	text-align: center;
+	font-size: 64px;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $primary-color;
+	}
+}
+.circle {
+	color: $secondary-accent-color;
+}
+.cross {
+	color: $primary-accent-color;
+}
